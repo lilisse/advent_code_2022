@@ -14,6 +14,17 @@ def parse_input(content: str) -> Dict[str, Dict[str, str]]:
     return result
 
 def _get_score_for_symbol(symbol: str) -> int:
+    """
+    Opponent:
+        - A: Rock
+        - B: Paper
+        - C: Scissors
+
+    Me:
+        - X: Rock
+        - Y: Paper
+        - Z: Scissors
+    """
     match symbol:
         case "X" | "A":
             return 1
