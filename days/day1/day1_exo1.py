@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import Dict, List, Tuple
 from decimal import Decimal
-from utils import read_file, CONSOLE
+from ..utils import read_file, CONSOLE
 
 def parse_input(content : str) -> Dict[str, List[str]]:
     content_by_line = content.split("\n\n")
@@ -40,4 +40,4 @@ def day1_exo1(path: Path) -> Tuple[str, Decimal]:
     content = read_file(Path(path))
     calories_by_elfs = parse_input(content)
     result = get_the_most(calories_by_elfs)
-    CONSOLE.print(f"Day 1 Exo 1:\n\t{result}")
+    CONSOLE.print(f"[green underline]Day 1 Exo 1:[/green underline]\n\t{result}")

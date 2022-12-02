@@ -9,6 +9,7 @@ packages = [{include = "advent_code_2022"}]
 [tool.poetry.dependencies]
 python = "3.11"
 rich = "^12.6.0"
+art = "^5.8"
 
 
 [build-system]

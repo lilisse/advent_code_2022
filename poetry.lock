@@ -1,4 +1,15 @@
 [[package]]
+name = "art"
+version = "5.8"
+description = "ASCII Art Library For Python"
+category = "main"
+optional = false
+python-versions = ">=2.7"
+
+[package.extras]
+dev = ["bandit (>=1.5.1)", "codecov (>=2.0.15)", "coverage (>=4.1)", "pydocstyle (>=3.0.0)", "vulture (>=1.0)"]
+
+[[package]]
 name = "commonmark"
 version = "0.9.1"
 description = "Python parser for the CommonMark Markdown spec"
@@ -38,9 +49,13 @@ jupyter = ["ipywidgets (>=7.5.1,<8.0.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "3.11"
-content-hash = "0ee3cb79a1b8a14980c48e7248da80e9ea25f6d36ae1153f6476c06cbca7859d"
+content-hash = "0601abb3f34f3e7dbddd1aa6990bcec941f101fa18b92d83f1ed39f7a3801184"
 
 [metadata.files]
+art = [
+    {file = "art-5.8-py2.py3-none-any.whl", hash = "sha256:cd77a9dcfe49dfb82f37a7b2401ae771fde6e155942b4e3dbc50a68c2bc7027c"},
+    {file = "art-5.8.tar.gz", hash = "sha256:83e383910e07eb7844a6618498708e0080ea842d584128ee6b0dc62d8b48cf36"},
+]
 commonmark = [
     {file = "commonmark-0.9.1-py2.py3-none-any.whl", hash = "sha256:da2f38c92590f83de410ba1a3cbceafbc74fee9def35f9251ba9a971d6d66fd9"},
     {file = "commonmark-0.9.1.tar.gz", hash = "sha256:452f9dc859be7f06631ddcb328b6919c67984aca654e5fefb3914d54691aed60"},

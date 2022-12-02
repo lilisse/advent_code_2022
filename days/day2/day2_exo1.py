@@ -1,4 +1,4 @@
-from utils import CONSOLE, read_file
+from ..utils import CONSOLE, read_file
 from pathlib import Path
 from typing import Dict
 
@@ -68,4 +68,4 @@ def day2_exo1(path: Path) -> int:
     content = read_file(path)
     games = parse_input(content)
     score = _get_score(games)
-    CONSOLE.print(f"Day 2 Exo 1:\n\t{score}")
+    CONSOLE.print(f"[green underline]Day 2 Exo 1:[/green underline]\n\t{score}")
