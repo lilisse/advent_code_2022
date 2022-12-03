@@ -109,7 +109,7 @@ def _get_game_score(games: Dict[str, Dict[str, str]]) -> int:
     return result
 
 
-def _get_score(games: Dict[str, Dict[str, str]]):
+def _get_score(games: Dict[str, Dict[str, str]]) -> int:
     return _get_hand_score(_get_hand(games)) + _get_game_score(games)
 
 def day2_exo2(path: Path) -> int:
@@ -117,3 +117,4 @@ def day2_exo2(path: Path) -> int:
     games = parse_input(content)
     score = _get_score(games)
     CONSOLE.print(f"[green underline]Day 2 Exo 2:[/green underline]\n\t{score}")
+    return score

@@ -41,3 +41,4 @@ def day1_exo1(path: Path) -> Tuple[str, Decimal]:
     calories_by_elfs = parse_input(content)
     result = get_the_most(calories_by_elfs)
     CONSOLE.print(f"[green underline]Day 1 Exo 1:[/green underline]\n\t{result}")
+    return result

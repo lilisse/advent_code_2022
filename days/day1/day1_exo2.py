@@ -16,3 +16,4 @@ def day1_exo2(path: Path) -> Decimal:
         result += res[1]
 
     CONSOLE.print(f"[green underline]Day 1 Exo 2:[/green underline]\n\t{result}")
+    return result
