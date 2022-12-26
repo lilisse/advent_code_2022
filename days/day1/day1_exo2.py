@@ -8,7 +8,7 @@ from .day1_exo1 import get_the_most, parse_input
 def day1_exo2(path: Path) -> Decimal:
     content = read_file(Path(path))
     calories_by_elfs = parse_input(content)
-    result = Decimal('0')
+    result = Decimal("0")
 
     for i in range(3):
         res = get_the_most(calories_by_elfs)

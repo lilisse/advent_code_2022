@@ -5,6 +5,7 @@ from pathlib import Path
 MINUS_LOWER = 96
 MINUS_UPPER = 38
 
+
 def parse_input(content: str) -> Dict[str, Dict[str, str]]:
     result = {}
 
@@ -12,11 +13,12 @@ def parse_input(content: str) -> Dict[str, Dict[str, str]]:
         res = {}
         if bag:
             bag_len = len(bag)
-            res["one"] = bag[:bag_len//2]
-            res["two"] = bag[bag_len//2:]
+            res["one"] = bag[: bag_len // 2]
+            res["two"] = bag[bag_len // 2 :]
             result[f"bag_{idx}"] = res
 
     return result
+
 
 def _get_weight(char: str):
     if char.isupper():
@@ -24,13 +26,15 @@ def _get_weight(char: str):
     else:
         return ord(char) - MINUS_LOWER
 
+
 def _get_anomalies(bags: Dict[str, Dict[str, str]]):
     result = []
 
     for bag in bags.values():
-        result.append(list(set(bag["one"])&set(bag["two"]))[0])
+        result.append(list(set(bag["one"]) & set(bag["two"]))[0])
 
     return result
+
 
 def get_all_weight(anomalies: List[str]) -> int:
     result = 0
@@ -39,6 +43,7 @@ def get_all_weight(anomalies: List[str]) -> int:
         result += _get_weight(ano)
 
     return result
+
 
 def day3_exo1(path: Path) -> int:
     bags = parse_input(read_file(path))

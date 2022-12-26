@@ -3,6 +3,7 @@ from .day3_exo1 import get_all_weight
 from ..utils import read_file, CONSOLE
 from typing import List, Dict
 
+
 def parse_input(content: str) -> List[str]:
     result = []
 
@@ -12,8 +13,10 @@ def parse_input(content: str) -> List[str]:
 
     return result
 
+
 def _get_badge(group: List[str]) -> str:
-    return list(set(group[0])&set(group[1])&set(group[2]))[0]
+    return list(set(group[0]) & set(group[1]) & set(group[2]))[0]
+
 
 def _get_badges(bags: List[str]) -> List[str]:
     begin = 0

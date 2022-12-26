@@ -3,7 +3,8 @@ from typing import Dict, List, Tuple
 from decimal import Decimal
 from ..utils import read_file, CONSOLE
 
-def parse_input(content : str) -> Dict[str, List[str]]:
+
+def parse_input(content: str) -> Dict[str, List[str]]:
     content_by_line = content.split("\n\n")
     result = {}
     for idx, calories in enumerate(content_by_line, start=1):
@@ -15,8 +16,9 @@ def parse_input(content : str) -> Dict[str, List[str]]:
 
     return result
 
+
 def get_calories(calories):
-    result = Decimal('0')
+    result = Decimal("0")
     for cal in calories:
         result += Decimal(cal)
 
@@ -35,6 +37,7 @@ def get_the_most(elfs: Dict[str, List[str]]) -> Tuple[str, Decimal]:
             winner = elf
 
     return (winner, most_calories)
+
 
 def day1_exo1(path: Path) -> Tuple[str, Decimal]:
     content = read_file(Path(path))

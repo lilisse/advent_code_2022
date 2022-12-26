@@ -2,6 +2,7 @@ from ..utils import CONSOLE, read_file
 from pathlib import Path
 from typing import Dict
 
+
 def parse_input(content: str) -> Dict[str, Dict[str, str]]:
     result = {}
 
@@ -12,6 +13,7 @@ def parse_input(content: str) -> Dict[str, Dict[str, str]]:
             result[f"game_{idx}"] = res
 
     return result
+
 
 def _get_score_for_symbol(symbol: str) -> int:
     """
@@ -33,6 +35,7 @@ def _get_score_for_symbol(symbol: str) -> int:
         case "Z" | "C":
             return 3
 
+
 def _get_hand_score(games: Dict[str, Dict[str, str]]) -> int:
     result = 0
 
@@ -41,9 +44,9 @@ def _get_hand_score(games: Dict[str, Dict[str, str]]) -> int:
 
     return result
 
+
 def _get_game_score(games: Dict[str, Dict[str, str]]) -> int:
     result = 0
-
 
     for game in games.values():
         opo_hand = _get_score_for_symbol(game["opo"])
@@ -63,6 +66,7 @@ def _get_game_score(games: Dict[str, Dict[str, str]]) -> int:
 
 def _get_score(games: Dict[str, Dict[str, str]]):
     return _get_hand_score(games) + _get_game_score(games)
+
 
 def day2_exo1(path: Path) -> int:
     content = read_file(path)

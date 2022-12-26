@@ -2,6 +2,7 @@ from ..utils import CONSOLE, read_file
 from pathlib import Path
 from typing import Dict, List
 
+
 def parse_input(content: str) -> Dict[str, Dict[str, str]]:
     result = {}
 
@@ -12,6 +13,7 @@ def parse_input(content: str) -> Dict[str, Dict[str, str]]:
             result[f"game_{idx}"] = res
 
     return result
+
 
 def _get_score_for_symbol(symbol: str) -> int:
     """
@@ -42,6 +44,7 @@ def _get_score_for_symbol(symbol: str) -> int:
         case "Z":
             return 6
 
+
 def _get_hand(games: Dict[str, Dict[str, str]]):
     result = []
 
@@ -49,6 +52,7 @@ def _get_hand(games: Dict[str, Dict[str, str]]):
         result.append(_get_hand_by_opo_and_end(game["end"], game["opo"]))
 
     return result
+
 
 def _get_hand_by_opo_and_end(end: str, opo: str) -> str:
     """
@@ -93,6 +97,7 @@ def _get_hand_by_opo_and_end(end: str, opo: str) -> str:
                 case "Z":
                     return "L"
 
+
 def _get_hand_score(my_hands: List[str]) -> int:
     result = 0
 
@@ -100,6 +105,7 @@ def _get_hand_score(my_hands: List[str]) -> int:
         result += _get_score_for_symbol(hand)
 
     return result
+
 
 def _get_game_score(games: Dict[str, Dict[str, str]]) -> int:
     result = 0
@@ -111,6 +117,7 @@ def _get_game_score(games: Dict[str, Dict[str, str]]) -> int:
 
 def _get_score(games: Dict[str, Dict[str, str]]) -> int:
     return _get_hand_score(_get_hand(games)) + _get_game_score(games)
+
 
 def day2_exo2(path: Path) -> int:
     content = read_file(path)

@@ -1,6 +1,7 @@
 from ..utils import CONSOLE, read_file
 from pathlib import Path
 
+
 def parse_input(content: str) -> list[dict[str, tuple[str, str]]]:
     result = []
     couples = content.split("\n")
@@ -17,6 +18,7 @@ def parse_input(content: str) -> list[dict[str, tuple[str, str]]]:
 
     return result
 
+
 def is_full_range(couple: dict[str, tuple[str, str]]) -> bool:
     """
     {one: ('2', '4'), two: ('6', '8')}
@@ -30,13 +32,14 @@ def is_full_range(couple: dict[str, tuple[str, str]]) -> bool:
     two_min = int(couple["two"][0])
     two_max = int(couple["two"][1])
 
-    one = list(range(one_min, one_max+1))
-    two = list(range(two_min, two_max+1))
+    one = list(range(one_min, one_max + 1))
+    two = list(range(two_min, two_max + 1))
 
     if set(one).issuperset(two) or set(two).issuperset(one):
         return True
 
     return False
+
 
 def how_many_is_full_range(couples: list[dict[str, tuple[str, str]]]) -> int:
     res = 0
@@ -45,6 +48,7 @@ def how_many_is_full_range(couples: list[dict[str, tuple[str, str]]]) -> int:
             res += 1
 
     return res
+
 
 def day4_exo1(path: Path) -> int:
     content = read_file(path)
